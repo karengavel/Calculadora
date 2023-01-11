@@ -1,5 +1,8 @@
 import sys
-print("Bienvenido a la calucladora! podrás realizar las siguientes operaciones:")
+import math  
+import numpy
+
+print("Bienvenido a la calculadora! podrás realizar las siguientes operaciones:")
 
 def menu(): 
  eleccion = 'x' 
@@ -11,7 +14,7 @@ def menu():
         [ 3] - Multiplicar
         [ 4] - Dividir
         [ 5] - Raiz
-        [ 6] - Exponente
+        [ 6] - Potencia
         [ 7] - Coseno
         [ 8] - Tangente
         [ 9] - Seno
@@ -43,8 +46,35 @@ def division():
     y = float(input("Ingresa el divisor: "))
     print(F"La suma de los números es: {x/y} ")
 
-finalizar_programa = False
-while not finalizar_programa:
+def raiz():
+    print ("Haz elegido raiz cuadrada! ")
+    x = float(input("Ingresa el número a sacar raiz: "))
+    print(F"La suma de los números es: {numpy.sqrt(x)} ")
+
+def potencia():
+    print ("Haz elegido Potencia! ")
+    x = float(input("Ingresa el número a potenciar: "))
+    y = float(input("Número a que potencia lo requieres: "))
+    print(F"La potencia de {x} elevado a la {y} es: {numpy.power(x,y)} ")
+
+def coseno():
+    print ("Haz elegido coseno! ")
+    x = float(input("Ingresa número: "))
+    print(F"El coseno es: {math.cos(x)} ")
+
+def tangente():
+    print ("Haz elegido tangente! ")
+    x = float(input("Ingresa número: "))
+    print(F"La tangente es: {math.tan(x)}")
+
+def seno():
+    print ("Haz elegido seno! ")
+    x = float(input("Ingresa número: "))
+    print(F"La seno es: {math.sin(x)} ")
+
+def funcionPrincipal():
+ finalizar_programa = False
+ while not finalizar_programa:
     opcion = menu()
     if opcion == 1:
         suma()
@@ -55,19 +85,21 @@ while not finalizar_programa:
     elif opcion == 4:
         division()
     elif opcion == 5:
-        print("Raiz...")
+        raiz()
     elif opcion == 6:
-        print("Exponente...")
+        potencia()
     elif opcion == 7:
-        print("Coseno...")
+        coseno()
     elif opcion == 8:
-        print("Tangente...")  
+        tangente() 
     elif opcion == 9:
-        print("Seno...") 
+        seno()
     elif opcion == 10:
         print("Adiós")
         sys.exit()
         finalizar_programa = True
     else:
         print("No tenemos esa opción vuelve a intentar.")
+
+funcionPrincipal()
 
