@@ -7,22 +7,16 @@ print("Bienvenido a la calculadora! podrás realizar las siguientes operaciones:
 
 def menu():
     eleccion = 'x'
+    funcionalidades = ["[ 1] - Sumar", "[ 2] - Restar", "[ 3] - Multiplicar", "[ 4] - Dividir",
+                       "[ 5] - Raiz", "[ 6] - Potencia",
+                       "[ 7] - Coseno", "[ 8] - Tangente", "[ 9] - Seno", "[10] - Salir"]
     while not eleccion.isnumeric() or int(eleccion) not in range(1, 11):
         print("Puedes elegir una de estas opciones:")
-        print('''
-        [ 1] - Sumar 
-        [ 2] - Restar
-        [ 3] - Multiplicar
-        [ 4] - Dividir
-        [ 5] - Raiz
-        [ 6] - Potencia
-        [ 7] - Coseno
-        [ 8] - Tangente
-        [ 9] - Seno
-        [10] - Salir ''')
+        for funcionalidad in funcionalidades:
+            print(funcionalidad)
         eleccion = input()
-
     return int(eleccion)
+
 
 
 def suma():
